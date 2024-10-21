@@ -1,8 +1,15 @@
 <template>
-    <HomePage />
+    <nav>
+      <a href="#/">Home</a>
+      <a href="#/features">Features</a>
+      <a href="#/pricing">Pricing</a>
+      <a href="#/contact">Contact</a>
+    </nav>
+    <main class="bg-slate-50">
+      <RouterView />
+    </main>
 </template>
 
 <script lang="ts" setup>
-import HomePage from '@/modules/landing/pages/HomePage.vue';
 
 </script>
