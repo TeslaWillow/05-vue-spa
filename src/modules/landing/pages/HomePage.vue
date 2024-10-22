@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-center">
     <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl">
       Bienvenido a nuestro sitio web
     </h1>
