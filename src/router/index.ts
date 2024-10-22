@@ -1,3 +1,4 @@
+import LoginPage from '@/modules/auth/pages/LoginPage.vue';
 import HomePage from '@/modules/landing/pages/HomePage.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -35,8 +36,21 @@ const router = createRouter({
     // AUTH
     {
       path: '/auth',
-      name: 'login',
-      component: () => import('@/modules/auth/pages/LoginPage.vue'),
+      name: 'auth',
+      redirect: { name: 'login' },
+      component: () => import('@/modules/auth/layout/AuthLayout.vue'),
+      children: [
+        {
+          path: '/login',
+          name: 'login',
+          component: LoginPage,
+        },
+        {
+          path: '/register',
+          name: 'register',
+          component: () => import('@/modules/auth/pages/RegisterPage.vue'),
+        },
+      ],
     },
   ],
 });
