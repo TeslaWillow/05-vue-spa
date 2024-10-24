@@ -1,10 +1,12 @@
 import LoginPage from '@/modules/auth/pages/LoginPage.vue';
+import NotFound404 from '@/modules/common/pages/NotFound404.vue';
 import HomePage from '@/modules/landing/pages/HomePage.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    // DASHBOARD
     {
       path: '/',
       name: 'landing',
@@ -51,6 +53,13 @@ const router = createRouter({
           component: () => import('@/modules/auth/pages/RegisterPage.vue'),
         },
       ],
+    },
+
+    // 404
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: NotFound404,
     },
   ],
 });
