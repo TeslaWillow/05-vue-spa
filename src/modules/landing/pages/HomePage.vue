@@ -6,5 +6,15 @@
     <p class="mx-auto max-w-[600px] text-gray-500 md:text-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
+    <p>Counter: {{ counter }}</p>
+    <button @click="counter++" class="button">+1</button>
   </div>
 </template>
+
+<script src="./HomePage.ts" lang="ts"></script>
+
+<style lang="css" scoped>
+.button {
+  @apply rounded-md py-2 px-5 bg-green-700 text-white;
+}
+</style>
