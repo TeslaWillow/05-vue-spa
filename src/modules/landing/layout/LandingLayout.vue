@@ -17,15 +17,25 @@
       </div>
       <nav class="flex flex-col ml-auto space-x-4 items-end h-10 sm:space-x-6">
         <div class="space-x-4">
-          <RouterLink :to="{ name: 'home' }"> Home </RouterLink>
-          <RouterLink to="/features"> Features </RouterLink>
-          <RouterLink to="/pricing"> Pricing </RouterLink>
-          <RouterLink to="/contact"> Contact </RouterLink>
+          <RouterLink :to="{ name: 'home' }" exact-active-class="active-link">
+            Home
+          </RouterLink>
+          <RouterLink to="/features" exact-active-class="active-link">
+            Features
+          </RouterLink>
+          <RouterLink to="/pricing" exact-active-class="active-link">
+            Pricing
+          </RouterLink>
+          <RouterLink to="/contact" exact-active-class="active-link">
+            Contact
+          </RouterLink>
         </div>
 
         <div class="space-x-4">
           <RouterLink to="/auth"> Login </RouterLink>
-          <RouterLink to="/pokemon/1"> Pokemons </RouterLink>
+          <RouterLink to="/pokemon/1" active-class="active-link">
+            Pokemons
+          </RouterLink>
         </div>
       </nav>
     </header>
@@ -55,4 +65,8 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped>
+.active-link {
+  @apply underline font-semibold text-blue-500;
+}
+</style>
