@@ -39,6 +39,7 @@
     </div>
     <!-- Login Button -->
     <button
+      @click="onLogin"
       type="submit"
       class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
     >
@@ -53,6 +54,22 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const onLogin = () => {
+  localStorage.setItem('userId', 'ABC-123');
+
+  const lastPath = localStorage.getItem('lastPath') ?? '';
+
+  router.replace({
+    path: lastPath,
+    // name: 'home',
+  });
+  console.log('login');
+};
+</script>
 
 <style lang="scss" scoped></style>
